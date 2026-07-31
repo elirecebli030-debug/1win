@@ -1,0 +1,12 @@
+# Bütün səhifələri ana səhifəyə yönləndir
+/*    /index.html    200
+
+# Xüsusi redirect-lər
+/cdaredirect    /index.html    200
+/cda/*    /index.html    200
+
+# Statik fayllar
+/static/*    /static/:splat    200
+
+# 404 səhifəsi
+# /404.html    404
