@@ -1,0 +1,1 @@
+import{defineAsyncComponent as r}from"vue";import{P as a}from"./page-loading-DExJ2fFN.js";const t=(o,n)=>{let e;return n?.prefetch&&(e=o()),r({suspensible:!1,loader:e?()=>e:o,loadingComponent:a,delay:0})};export{t as p};

@@ -1,0 +1,1 @@
+import{inject as r}from"vue";import{I as e}from"./logger-Ce9FfjPy.js";const c=()=>{const o=r(e);if(o===void 0)throw new Error("I18nContext is missing");const{locale:t,override:n}=o;return{locale:t,override:n}};export{c as u};
