@@ -1,32 +1,37 @@
 [build]
   publish = "."
 
-# Bütün 404-ləri ana səhifəyə yönləndir
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-
-# Xüsusi olaraq /cdaredirect üçün
-[[redirects]]
-  from = "/cdaredirect"
-  to = "/index.html"
-  status = 200
-
-# Bütün səhifələr üçün SPA rule
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
   force = true
 
-# Statik fayllar üçün cache
+[[redirects]]
+  from = "/cdaredirect"
+  to = "/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/cda/*"
+  to = "/index.html"
+  status = 200
+  force = true
+
+# Bütün API sorğuları üçün (əgər varsa)
+[[redirects]]
+  from = "/api/*"
+  to = "/api/:splat"
+  status = 200
+
+# Statik fayllar üçün
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "no-cache"
+
 [[headers]]
   for = "/static/*"
   [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-[[headers]]
-  for = "/static/app/assets/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+    Cache-Control = "public, max-age=31536000"
